@@ -1,20 +1,41 @@
 //
 //  main.m
-//  subbu
+//  inheritance
 //
-//  Created by Saibersys on 8/11/16.
-//  Copyright © 2016 Saibersys. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-#import "Objective-C.h"
 
-int main(int argc, const char * argv[]) {
+@interface Subbu : NSObject {
+    int numb;
+}
+-(void) setNumb: (int) a;
+
+@end
+
+@implementation Subbu
+
+-(void) setNumb:(int)a {
+    numb = a;
+}
+
+@end
+
+@interface Nivas : Subbu
+-(void) print;
+
+@end
+
+@implementation Nivas
+
+-(void) print {
+    NSLog(@"%i", numb);
+}
+
+@end
+int main (int argc, char *argv[]) {
     @autoreleasepool {
-        Objective_C *subbu = [[Objective_C alloc] init];
-        [subbu setAge:22];
-        [subbu setWeight:69];
-        [subbu print];
+        Nivas *Don = [[Nivas alloc] init];
+        [Don setNumb:18];
+        [Don print];
     }
     return 0;
 }
